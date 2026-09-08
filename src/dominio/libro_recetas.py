@@ -1,4 +1,4 @@
-from src.dominio.receta import Receta
+from .receta import Receta
 
 class LibroDeRecetas:
     def __init__(self):

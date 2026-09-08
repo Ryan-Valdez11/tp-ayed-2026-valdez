@@ -2,44 +2,21 @@
 
 Completar y hacer crecer en cada entrega. No hace falta prosa larga: oraciones claras y tablas.
 
-# Informe del TP
-
-Completar y hacer crecer en cada entrega. No hace falta prosa larga: oraciones claras y tablas.
-
 ## 1. Grupo y tema
 
 - Tema: Recetario
-- Por qué lo eligieron (5–8 líneas):
-Se eligió la temática de Recetario por la practicidad que ofrece para estructurar datos heterogéneos y del mundo real. Permite modelar entidades compuestas por atributos simples (como nombre, tiempo de cocción y categoría) y colecciones internas (como listas de ingredientes y pasos de preparación). Además, brinda una estructura ideal para aplicar las colecciones de Python en la primera entrega y profundizar más adelante con algoritmos de búsqueda, ordenamiento y estructuras lineales avanzadas.
+- Por qué lo elegí (5–8 líneas):
+Elegí el recetario porque es una idea práctica para usar varios tipos de datos en Python. Cada receta combina texto para el título y la categoría, enteros para los minutos de cocción, y listas para los ingredientes y la preparación. Me sirve para arrancar con listas en esta entrega y dejar el proyecto acomodado para agregar búsquedas, filtros y ordenamientos en las que vienen.
 
 ## 2. Modelo
 
 Qué es un ítem del catálogo. Qué es mutable y qué no (E1). Cómo se relacionan catálogo, colección principal, pila y cola.
 
-Un ítem del catálogo es una **Receta**, la cual contiene información sobre su título, categoría, tiempo de preparación en minutos, una lista de ingredientes y la secuencia de pasos a seguir.
+Cada ítem del catálogo es una receta con título, categoría, tiempo, ingredientes y pasos.
 
-**Mutabilidad en las estructuras (E1):**
-- **Estructuras Mutables:** La lista principal de recetas, la lista de ingredientes y la lista de pasos son mutables (tipos `list` y `dict` en Python). Permiten agregar, modificar o eliminar elementos dinámicamente durante la ejecución.
-- **Estructuras Inmutables:** Los atributos individuales como el nombre, la categoría (de tipo `str`) y el tiempo de cocción (de tipo `int`) son inmutables. Una vez definidos, sus valores no se modifican directamente, sino que se reemplazan.
+La colección general de recetas y las listas de ingredientes y pasos son mutables (`list`) para poder agregar o modificar datos durante la ejecución. El título, la categoría (`str`) y el tiempo (`int`) son inmutables, así que si hay que cambiarlos directamente se reasigna el valor.
 
-**Relación de componentes:**
-- El **Catálogo** agrupa el conjunto de todas las recetas disponibles.
-- La **Colección principal** es una lista que almacena las recetas del catálogo.
-- La **Pila** y la **Cola** se utilizarán en entregas posteriores para gestionar el historial de navegación de recetas o el flujo de ejecución en modo cocina.
-
-```text
-+-------------------------------------------------------+
-|                       CATÁLOGO                        |
-|  +-------------------------------------------------+  |
-|  | Colección Principal: [Receta 1, Receta 2, ...]  |  |
-|  +-------------------------------------------------+  |
-|                                                       |
-|  Receta:                                              |
-|  - Titulo (str)          -> Inmutable                 |
-|  - Tiempo (int)          -> Inmutable                 |
-|  - Ingredientes (list)   -> Mutable                   |
-|  - Pasos (list)          -> Mutable                   |
-+-------------------------------------------------------+'''
+El Catálogo es la estructura general del sistema y adentro guarda la colección principal con todas las recetas. La pila y la cola las voy a usar más adelante: la pila para ir guardando el historial de las recetas que abro y la cola para seguir el orden de los pasos al cocinar.
 
 
 ## 3. Recursión (E2)
